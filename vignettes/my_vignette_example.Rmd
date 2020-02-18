@@ -1,0 +1,41 @@
+---
+title: "my_vignette_example"
+output:
+  bookdown::html_document2:
+    base_format: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{my_vignette_example}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  message= FALSE,
+  fig.width = 5,
+  fig.height = 2,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(mysimplecompendium)
+```
+
+```{r RunCodeChunk, results='hide'}
+source('reference_test.R')
+```
+
+```{r starwars-gender_plot, fig.cap="Gender of Star Wars characters"}
+library(tidyverse)
+
+starwars %>%
+  mutate(gender_fct = fct_infreq(gender)) %>%
+  ggplot(aes(gender_fct)) +
+  geom_bar() +
+  xlab("") +
+  theme_minimal(base_size = 14)
+```
+
+In Figure \@ref(fig:starwars-gender-plot) we can see that there is an imbalance in the gender ratios of of Satrwars characters. This needs to be fixed.

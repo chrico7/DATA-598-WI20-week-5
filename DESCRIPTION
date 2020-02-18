@@ -2,10 +2,18 @@ Package: mysimplecompendium
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
+Author: Corey Christopherson https://orcid.org/0000-0001-6470-1146in
+Maintainer: Corey Christopherson <coreyc2@uw.edu>
+Depends: R(>= 3.6.0)
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Imports: 
+    dplyr (>= 0.8.4)
+Suggests: 
+    tidyr (>= 1.0.2),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
